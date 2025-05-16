@@ -1,6 +1,5 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
@@ -9,5 +8,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: 'https://3qm-est.github.io',
-  base: 'nutrinet',
+  base: '/nutrinet/',
 });
