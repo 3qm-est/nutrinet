@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'BalooBhaina';
+    src: url('/public/fonts/BalooBhaina-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'AvenirNextLTPro';
+    src: url('/public/fonts/AvenirNextLTPro-Regular.otf');
+}
+
+@font-face {
+    font-family: 'AvenirNextLTProBold';
+    src: url('/public/fonts/AvenirNextLTPro-Bold.otf');
+}
+

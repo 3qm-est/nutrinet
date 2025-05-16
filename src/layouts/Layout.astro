@@ -1,18 +1,37 @@
+---
+const classMenu = 'cursor-pointer relative transition-all after:transition-all after:w-full'
+const classMenuActive = 'after:absolute after:bottom-0 after:left-0 after:border-2 after:w-full after:rounded'
+const pageUrl = Astro.url.pathname
+const classMenuActivePedí = pageUrl === '/' ? classMenuActive : ''
+const classMenuActiveVecinos = pageUrl === '/vecinos/' ? classMenuActive : '';
+---
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link href="/src/styles/global.css" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Nutrinet</title>
 	</head>
-	<body>
-		<slot />
+	<body class="m-0 p-0">
+		<main class="h-screen overflow-y-scroll lg:snap-y lg:snap-mandatory scroll-smooth">
+			<div class="sticky top-0 pt-6 pb-4 px-5 sm:px-20 bg-[#7EC8A7] flex text-white w-full justify-between z-50">
+				<span class="font-[BalooBhaina] text-3xl">Nutrinet</span>
+				<ul class="font-[AvenirNextLTPro] text-2xl hidden sm:grid grid-cols-3 gap-5 text-center">
+					<li class={`${classMenu} ${classMenuActivePedí}`}><a href="/nutrinet/">Pedí</a></li>
+					<li class={`${classMenu} ${classMenuActiveVecinos}`}><a href="/nutrinet/vecinos/">Vecinos</a></li>
+					<li class={`${classMenu}`}>Nosotros</li>
+				</ul>
+			</div>
+			<slot></slot>
+		</main>				
 	</body>
 </html>
 
 <style>
+	
 	html,
 	body {
 		margin: 0;
